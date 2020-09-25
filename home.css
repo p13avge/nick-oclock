@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap');
+/* Body and background styles*/
+
+:root{
+    --main-color:#f4e1d2;
+    font-size: 16px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Kumbh Sans', sans-serif;
+    height: 100vh;
+    width: 100%;
+    background-color:var(--main-color);
+}
+
+.background{
+    position: relative;
+    background-image: url(./images/image3.jpg);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: scaleAnim 2s forwards;
+
+}
+.text-container{
+    padding: 2rem;
+    width: auto;
+    height: auto;
+    margin-top:16rem;
+}
+.text{
+    font-weight: 100;
+    border-radius:2%;
+    text-align: justify;
+    background-color:hsla(263, 0%, 45%, 0.28);
+    padding: 0.5rem;
+    width: calc(100%-50px);
+    color: white;
+    font-size: clamp(14px,2vw,20px);
+}
+
+/* main-content styles*/
+
+.container{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    height: 100%;
+}
+.nav-bar{
+    display: flex;
+    padding: 10px;
+}
+
+    a{
+    text-decoration: none;
+    color: var(--main-color);
+    margin-left: 2%;
+    font-size: 20px;
+}
+
+.internal{
+    display: flex;
+    flex: 2;
+}
+
+.external{
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.links:after{
+    content: '';
+    display: block;
+    border-bottom: 2px solid white;
+    border-radius: 4px;
+    margin: auto;
+    width: 0px;
+    transition: width 400ms ease-in-out;
+}
+
+.links:hover:after{
+    width: 100%;
+}
+
+
+.external>.fb-link,.insta-link{
+    font-size: 40px;
+    color: var(--main-color);
+    margin-right: 20px;
+}
+
+.icon-container{
+    display: flex;
+    text-align: center;
+    justify-content: flex-end;
+    align-content: center;
+}
+
+.findUs-text{
+    margin: auto 5px auto 0px;
+    font-size: 28px;
+    color: var(--main-color);
+}
+
+.fab{
+    opacity: 1;
+    transition: 1s ease-in-out;
+}
+
+.fab:hover{
+    opacity: 1.7;
+    transform: scale(1.3);
+}
+
+.phone-number{
+    width: 100%;
+    padding: 10px;
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    font-size: 1rem;
+    color: var(--main-color);
+}
+
+/*Animations*/
+
+@keyframes scaleAnim{
+    0%{
+        transform: scale(0.8);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+/*Responsive*/
+
+@media (max-width:680px){
+    .nav-bar{
+        flex-direction: column;
+    }
+    .text-container{
+        margin-top: 12rem;
+    }
+    .fab{
+        transform: scale(0.8);
+    }
+    .external{
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+    }
+    .Home{
+        align-self: flex-start;
+        border-bottom: 2px solid var(--main-color);
+        border-radius: 2px;
+    }
+    .About{
+        align-self: flex-end;
+        border-bottom: 2px solid var(--main-color);
+    }
+    .internal{
+        flex-direction: column;
+    }
+    .findUs-text{
+        display: none;
+    }
+    .external{
+        display: flex;
+        justify-content: flex-start;
+    }
+    .external>.fb-link,.insta-link{
+        font-size: 35px;
+        margin-top: 5px;
+    }
+}
